@@ -1,24 +1,21 @@
 make README.md
-
-function check
+function checker
 {
-	if [ $files -gt $ans ]
+	if [ $fl -gt $answer ]
         then
-                echo “Higher!”
-        elif [ $files -lt $ans ]
+                echo “up”
+        elif [ $fl -lt $answer ]
         then
-                echo “Lower!”
+                echo “down”
         fi
 }
-
 v=$(ls | wc -l)
-files=$[$v]
-ans=-1
-while [ $files != $ans ]
+fl=$[$v]
+answer=-1
+while [ $fl != $answer ]
 do
 	echo "Guess the number of files in the directory:"
-	read ans
-	check
+	read answer
+	checker
 done
-echo Good job\! There were\: $ans
-
+echo You did it\! this was the answer\: $answers
